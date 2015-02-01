@@ -3,8 +3,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-VariantBam - One-pass extraction of sequencing reads from a BAM file according to sets of rules defined on sets of genomic intervals
-====================================================================================================================================
+VariantBam - One-pass extraction of sequencing reads from a BAM file using cascading rules
+==========================================================================================
 
 Contents:
 
