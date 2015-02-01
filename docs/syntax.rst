@@ -95,18 +95,20 @@ is equivalent to
     region@myvcf.vcf
     rule@!hardclip;!duplicate;!qcfail;!supplementary
 	
-The global tag will apply through all of the regions. If you want to reset it for everything, just add ``global@every
+The global tag will apply through all of the regions. If you want to reset it for everything, just add ``global@every`` 
+back onto the stack.
 
-To make things run a little faster, you can set the order so that the more inclusive rules are first. This only
+To make things run a little faster, you can set the order so that the more inclusive regions / rules are first. This only
 applies if there is an overlap among regions. This is because VariantBam will move down the list of regions
-that apply to this read and stop as soon as it meets an inclusion criteria. 
+that apply to this read and stop as soon as it meets an inclusion criteria. I prefer to start with a whole-genome region / rule
+set, and then add more fine-mapped regions later.
 
 Command Line Script
 ~~~~~~~~~~~~~~~~~~~
 
 The usual method of including a VariantBam script is to write a text file and pass to
 VariantBam with the ``-r`` flag. However, sometimes it is useful to not have to write an intermediate
-file and just feed rules directly in. In that case, just pass a string in the -r flag in quotes, and VariantBam
+file and just feed rules directly in. In that case, just pass a string literal to the -r flag, and VariantBam
 will parse it as if it read it from a file. For instance, you might run
 something like the following:
 

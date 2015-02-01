@@ -14,8 +14,6 @@ Contents:
    introduction
    installation
    syntax
-   visual
-
 
 Indices and tables
 ==================
