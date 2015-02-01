@@ -65,7 +65,7 @@ and apply rules separately to them.
     region@/home/unix/jwala/myvcf.vcf,mate,pad:1000
     #### I want to keep all the reads (this the default). Ill be explicit with the "every" keyword
     rule@every
-    #### Now I have a BED file which gives a list of exons. In here, I just want to keep "variant" reads
+    #### I might also have a BED file which gives a list of exons. In here, I just want to keep "variant" reads
     #### so I can specify something like:
     region@/home/unix/jwala/myexonlist.bed 
     rule@y!isize:[100,600];!unmapped;!unmapped_mate
@@ -81,12 +81,10 @@ supplementary reads in every region, you would do:
 
     global@!hardclip;!duplicate;!qcfail;!supplementary
     region@WG
-    rule@!isize:[0,600];
+    rule@!isize:[0,600]
     rule@clip:[10,101];mapq:[1,60]
     region@myvcf.vcf
-
 is equivalent to
-
 .. code:: bash
 
     region@WG
