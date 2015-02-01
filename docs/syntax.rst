@@ -106,13 +106,12 @@ set, and then add more fine-mapped regions later.
 Command Line Script
 ~~~~~~~~~~~~~~~~~~~
 
-The usual method of including a VariantBam script is to write a text file and pass to
-VariantBam with the ``-r`` flag. However, sometimes it is useful to not have to write an intermediate
+The usual method of inputing rules is with a VariantBam script as a text file (passed to
+VariantBam with the ``-r`` flag). However, sometimes it is useful to not have to write an intermediate
 file and just feed rules directly in. In that case, just pass a string literal to the -r flag, and VariantBam
-will parse it as if it read it from a file. For instance, you might run
-something like the following:
+will parse directly. Just separate lines with a ``%``. For instance, you might run something like the following:
 
-``variant -i big.bam -o small.bam -r 'global@!hardclip\nregion@WG\nrule@!isize:[0,600];\nrule@clip:[10,101];mapq:[1,60]\nregion@myvcf.vcf'``
+``variant -i big.bam -o small.bam -r 'global@!hardclip%region@WG%rule@!isize:[0,600];%rule@clip:[10,101];mapq:[1,60]%region@myvcf.vcf'``
 
 Note the single quotes so that it is interpreted as a string literal in BASH.
 
