@@ -11,6 +11,9 @@ that are applied to the BAM[*]_. Below is an example of a valid VariantBam scrip
     rule@!hardclip;!unmapped;!unmapped_mate;isize:[0,600];!mapq:[10,100]
     rule@!hardclip;!unmapped;!unmapped_mate;clip:[10,101]
 
+Region
+~~~~~~
+
 Let's look first at the ``region`` tag. The region@ keyword marks that what follows is a region, 
 which is either the keyword ``WG`` for whole genome, or a VCF, MAF, Callstats or BED file. Optionally,
 you can specify that a region is a bit bigger than is actually in the file. You can do this by "padding"
@@ -18,12 +21,15 @@ the regions around the sites. For example:
 
 ``region@myvcf.vcf,pad:1000``
 
-You can also state that the region applies to reads who dont necessarily overlap the region, but there pair-mate does.
+You can also state that the region applies to reads who don't necessarily overlap the region, but their pair-mate does.
 
 ``region@myvcf,pad:1000,mate``
 
 Note that the syntax is such that you must specify the file immediately after the @, following by other options
 in any order.
+
+Rules
+~~~~~
 
 The next two lines specify a pair of rules, marked with the ``rule@`` tag. 
 The default rule is to include every read, and the conditions are meant to be 
@@ -64,6 +70,9 @@ and apply rules separately to them.
     region@/home/unix/jwala/myexonlist.bed 
     rule@y!isize:[100,600];!unmapped;!unmapped_mate
 
+Global
+~~~~~~
+
 To make things more clear and reduce redundancy, you can also type a ``global@`` rule anywhere in the stack,
 and it will append that rule to everything below. For example, to exclude hardclipped, duplicate, qcfail and 
 supplementary reads in every region, you would do:
@@ -92,13 +101,16 @@ To make things run a little faster, you can set the order so that the more inclu
 applies if there is an overlap among regions. This is because VariantBam will move down the list of regions
 that apply to this read and stop as soon as it meets an inclusion criteria. 
 
+Command Line Script
+~~~~~~~~~~~~~~~~~~~
+
 The usual method of including a VariantBam script is to write a text file and pass to
 VariantBam with the ``-r`` flag. However, sometimes it is useful to not have to write an intermediate
 file and just feed rules directly in. In that case, just pass a string in the -r flag in quotes, and VariantBam
 will parse it as if it read it from a file. For instance, you might run
 something like the following:
 
-``variant -i big.bam -o small.bam -r 'global@!hardclip\nregion@WG\nrule@!isize:[0,600];\nrule@clip:[10,101];mapq:[1,60]\nregion@myvcf.vcf'
+``variant -i big.bam -o small.bam -r 'global@!hardclip\nregion@WG\nrule@!isize:[0,600];\nrule@clip:[10,101];mapq:[1,60]\nregion@myvcf.vcf'``
 
 Note the single quotes so that it is interpreted as a string literal in BASH.
 
