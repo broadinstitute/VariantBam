@@ -27,4 +27,5 @@ Under what situations would you use ``bamtools filter``, and when would you use 
 
 A manuscript for VariantBam is currently under preparation.
 
-.. _documentation https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0CB4QFjAA&url=https%3A%2F%2Fraw.githubusercontent.com%2Fwiki%2Fpezmaster31%2Fbamtools%2FTutorial_Toolkit_BamTools-1.0.pdf&ei=Q2PNVI68JND2yQTUxYJY&usg=AFQjCNHhp87XjcbxkPHeEn_G8od959XQNg&sig2=1oIXOENQT1Mr7W6bJfwjJw&bvm=bv.85076809,d.aWw
+.. _documentation https://raw.githubusercontent.com/wiki/pezmaster31/bamtools/Tutorial_Toolkit_BamTools-1.0.pdf
+
