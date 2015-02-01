@@ -84,7 +84,9 @@ supplementary reads in every region, you would do:
     rule@!isize:[0,600]
     rule@clip:[10,101];mapq:[1,60]
     region@myvcf.vcf
+
 is equivalent to
+
 .. code:: bash
 
     region@WG
