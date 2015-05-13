@@ -1,0 +1,81 @@
+\section{Range Struct Reference}
+\label{structRange}\index{Range@{Range}}
+{\tt \#include $<$Mini\-Rules.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+\bf{Range} ()
+\item 
+\bf{Range} (int mn, int mx, int in, string p)
+\item 
+bool \textbf{is\-Valid} (int val)\label{structRange_550395f2bda318247c4386cf5f2a802b}
+
+\item 
+void \textbf{parse\-Rule\-Line} (string line)\label{structRange_d3960c39e83102864d8d012f64c479a6}
+
+\item 
+void \textbf{set\-Every} ()\label{structRange_11d2ca2d29e66a74357a9a28a7fc93c5}
+
+\item 
+void \textbf{set\-None} ()\label{structRange_540bdb9365acb2a8704dc313ff3b84eb}
+
+\item 
+bool \textbf{is\-Every} () const \label{structRange_bedf5dffb9053501d740412ac00c49a8}
+
+\item 
+bool \textbf{is\-None} () const \label{structRange_3b059c69ec5bbd8bad7fba4633b372be}
+
+\end{CompactItemize}
+\subsection*{Public Attributes}
+\begin{CompactItemize}
+\item 
+int \textbf{min}\label{structRange_876e79dc843edc28b4f2d7fc351d5c74}
+
+\item 
+int \textbf{max}\label{structRange_cc3dda97c518a7e27830d593ddcb063e}
+
+\item 
+bool \textbf{inverted}\label{structRange_68b291553aee9207472285b078c33ebb}
+
+\item 
+string \textbf{pattern}\label{structRange_866dc246cddc80f62393709fa05bae1a}
+
+\item 
+bool \textbf{every} = true\label{structRange_63f3aa8d7f25810be49d78b601913636}
+
+\item 
+bool \textbf{none} = false\label{structRange_ac10781eec41cafb010c38a744dcc06e}
+
+\end{CompactItemize}
+\subsection*{Friends}
+\begin{CompactItemize}
+\item 
+ostream \& \textbf{operator$<$$<$} (ostream \&out, const \bf{Range} \&r)\label{structRange_5c7ec43a5822df3c5252768e016e4912}
+
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Hold a range of valid numeric values (e.g. isize).
+
+Can optionally invert the range to make rule the complement of the range (eg isize NOT in [300,600] 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Range@{Range}!Range@{Range}}
+\index{Range@{Range}!Range@{Range}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Range::Range ()\hspace{0.3cm}{\tt  [inline]}}\label{structRange_f2d6b15eee4b7191ec8e8e3e824e06c6}
+
+
+Construct a \doxyref{Range}{p.}{structRange} from 0 to 0, non-inverted \index{Range@{Range}!Range@{Range}}
+\index{Range@{Range}!Range@{Range}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Range::Range (int {\em mn}, int {\em mx}, int {\em in}, string {\em p})\hspace{0.3cm}{\tt  [inline]}}\label{structRange_3fb782d7f06a91d295f595044ad80f0e}
+
+
+Construct a \doxyref{Range}{p.}{structRange} from mn to mx, inclusive 
+
+The documentation for this struct was generated from the following file:\begin{CompactItemize}
+\item 
+/xchip/gistic/Jeremiah/GIT/isva/Snow\-Tools/src/Snow\-Tools/Mini\-Rules.h\end{CompactItemize}

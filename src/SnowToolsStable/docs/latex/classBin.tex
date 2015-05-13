@@ -1,0 +1,85 @@
+\section{Bin Class Reference}
+\label{classBin}\index{Bin@{Bin}}
+{\tt \#include $<$Histogram.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+\bf{Bin} ()
+\item 
+size\_\-t \bf{get\-Count} () const 
+\item 
+bool \bf{contains} (const int32\_\-t \&elem) const 
+\item 
+bool \bf{operator$<$} (const \bf{Bin} \&b) const 
+\item 
+\bf{Bin} \& \bf{operator--} ()
+\item 
+\bf{Bin} \& \bf{operator++} ()
+\end{CompactItemize}
+\subsection*{Friends}
+\begin{CompactItemize}
+\item 
+std::ostream \& \bf{operator$<$$<$} (std::ostream \&out, const \bf{Bin} \&b)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Stores one bin in a \doxyref{Histogram}{p.}{classHistogram} 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Bin@{Bin}!Bin@{Bin}}
+\index{Bin@{Bin}!Bin@{Bin}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Bin::Bin ()\hspace{0.3cm}{\tt  [inline]}}\label{classBin_83119b35a8a6808e53ec7241cbe0f2bc}
+
+
+Construct a new object with 0 count and range [0,1] 
+
+\subsection{Member Function Documentation}
+\index{Bin@{Bin}!contains@{contains}}
+\index{contains@{contains}!Bin@{Bin}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool Bin::contains (const int32\_\-t \& {\em elem}) const}\label{classBin_b66e62e37e9f2dae793c2ae7455ca460}
+
+
+Check if this bin contains a value \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em elem}]Value to check if its in this range \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]true if the value is within the range \end{Desc}
+\index{Bin@{Bin}!getCount@{getCount}}
+\index{getCount@{getCount}!Bin@{Bin}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}size\_\-t Bin::get\-Count () const\hspace{0.3cm}{\tt  [inline]}}\label{classBin_d03fb0d44f505783c47c7551c24f2deb}
+
+
+Return the number of counts in this histogram bin \index{Bin@{Bin}!operator++@{operator++}}
+\index{operator++@{operator++}!Bin@{Bin}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\bf{Bin}\& Bin::operator++ ()}\label{classBin_f05befa84d628be87b861893027d5c3c}
+
+
+Increment the histogram bin by one. Note that this is the prefix version only \index{Bin@{Bin}!operator--@{operator--}}
+\index{operator--@{operator--}!Bin@{Bin}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\bf{Bin}\& Bin::operator-- ()}\label{classBin_292383226d48046fa2f876b9723bef58}
+
+
+Decrement the histogram bin by one. Note that this is the prefix version only \index{Bin@{Bin}!operator<@{operator$<$}}
+\index{operator<@{operator$<$}!Bin@{Bin}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool Bin::operator$<$ (const \bf{Bin} \& {\em b}) const}\label{classBin_8d33d8f849432c7c747d4a4cb16ac2d5}
+
+
+Define bin comparison operator by location of left bound, then right 
+
+\subsection{Friends And Related Function Documentation}
+\index{Bin@{Bin}!operator<<@{operator$<$$<$}}
+\index{operator<<@{operator$<$$<$}!Bin@{Bin}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}std::ostream\& operator$<$$<$ (std::ostream \& {\em out}, const \bf{Bin} \& {\em b})\hspace{0.3cm}{\tt  [friend]}}\label{classBin_540cb97187830dcdcfadcd7d5b8dfa17}
+
+
+Output the bin in format \char`\"{}start range, end range, count\char`\"{} 
+
+The documentation for this class was generated from the following file:\begin{CompactItemize}
+\item 
+/xchip/gistic/Jeremiah/GIT/isva/Snow\-Tools/src/Snow\-Tools/Histogram.h\end{CompactItemize}

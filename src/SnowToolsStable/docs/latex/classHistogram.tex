@@ -1,0 +1,127 @@
+\section{Histogram Class Reference}
+\label{classHistogram}\index{Histogram@{Histogram}}
+{\tt \#include $<$Histogram.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+\bf{Histogram} ()
+\item 
+\bf{Histogram} (const int32\_\-t \&start, const int32\_\-t \&end, const uint32\_\-t \&width)
+\item 
+void \bf{initial\-Spans} (size\_\-t num\_\-bins, std::vector$<$ S $>$ $\ast$pspanv, size\_\-t min\_\-bin\_\-width=0)
+\item 
+void \bf{add\-Elem} (const int32\_\-t \&elem)
+\item 
+void \bf{remove\-Elem} (const int32\_\-t \&elem)
+\item 
+void \bf{to\-CSV} (std::ofstream \&fs)
+\item 
+size\_\-t \bf{total\-Count} () const 
+\item 
+int32\_\-t \bf{bin\-Count} (size\_\-t i)
+\item 
+size\_\-t \bf{num\-Bins} ()
+\item 
+size\_\-t \bf{retrieve\-Bin\-ID} (const int32\_\-t \&elem) const 
+\end{CompactItemize}
+\subsection*{Friends}
+\begin{CompactItemize}
+\item 
+std::ostream \& \textbf{operator$<$$<$} (std::ostream \&out, const \bf{Histogram} \&h)\label{classHistogram_8ea3a78f35d6bdb0049f4caed2e0d787}
+
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Class to store histogram of numeric values.
+
+The bins of the \doxyref{Histogram}{p.}{classHistogram} are not uniformly spaced, and their ranges determined by partitioning the spans it tablulates into uniform quantiles when initialized by \doxyref{Histogram::initial\-Spans()}{p.}{classHistogram_9e08f9756280ae043ec6bae2bf0f4f1e}. As elements are added and removed this initial bin definition remains constant. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Histogram@{Histogram}!Histogram@{Histogram}}
+\index{Histogram@{Histogram}!Histogram@{Histogram}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Histogram::Histogram ()\hspace{0.3cm}{\tt  [inline]}}\label{classHistogram_15aa9235ad5b3b6517d9a95f385365dd}
+
+
+Construct an empty histogram \index{Histogram@{Histogram}!Histogram@{Histogram}}
+\index{Histogram@{Histogram}!Histogram@{Histogram}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Histogram::Histogram (const int32\_\-t \& {\em start}, const int32\_\-t \& {\em end}, const uint32\_\-t \& {\em width})}\label{classHistogram_d2b738c7215d77efe299ebae6cd62048}
+
+
+Construct a new histogram with bins spaced evenly 
+
+\subsection{Member Function Documentation}
+\index{Histogram@{Histogram}!addElem@{addElem}}
+\index{addElem@{addElem}!Histogram@{Histogram}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void Histogram::add\-Elem (const int32\_\-t \& {\em elem})}\label{classHistogram_d4ce4adf9101b6a3ae24a8d051f71f68}
+
+
+Add an element to the histogram \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em elem}]Length of event to add \end{description}
+\end{Desc}
+\index{Histogram@{Histogram}!binCount@{binCount}}
+\index{binCount@{binCount}!Histogram@{Histogram}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int32\_\-t Histogram::bin\-Count (size\_\-t {\em i})\hspace{0.3cm}{\tt  [inline]}}\label{classHistogram_928e295f26fcd0d2f50ed3bd8a894e37}
+
+
+Get count for a histogram bin \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em i}]\doxyref{Bin}{p.}{classBin} index \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]number of events in histogram bin \end{Desc}
+\index{Histogram@{Histogram}!initialSpans@{initialSpans}}
+\index{initialSpans@{initialSpans}!Histogram@{Histogram}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void Histogram::initial\-Spans (size\_\-t {\em num\_\-bins}, std::vector$<$ S $>$ $\ast$ {\em pspanv}, size\_\-t {\em min\_\-bin\_\-width} = {\tt 0})}\label{classHistogram_9e08f9756280ae043ec6bae2bf0f4f1e}
+
+
+initialize histogram from a vector of spans \index{Histogram@{Histogram}!numBins@{numBins}}
+\index{numBins@{numBins}!Histogram@{Histogram}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}size\_\-t Histogram::num\-Bins ()\hspace{0.3cm}{\tt  [inline]}}\label{classHistogram_c48ebae8900ff14f38aff5093b2f7709}
+
+
+Get number of bins in histogram \begin{Desc}
+\item[Returns:]Number of bins in histogram \end{Desc}
+\index{Histogram@{Histogram}!removeElem@{removeElem}}
+\index{removeElem@{removeElem}!Histogram@{Histogram}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void Histogram::remove\-Elem (const int32\_\-t \& {\em elem})}\label{classHistogram_396f33c9de1e094867804cc238150759}
+
+
+Remove a span from the histogram \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em span}]Length of event to remove \end{description}
+\end{Desc}
+\index{Histogram@{Histogram}!retrieveBinID@{retrieveBinID}}
+\index{retrieveBinID@{retrieveBinID}!Histogram@{Histogram}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}size\_\-t Histogram::retrieve\-Bin\-ID (const int32\_\-t \& {\em elem}) const}\label{classHistogram_3dc0664cb0b49be54a4b5124479dcae0}
+
+
+Find bin corresponding to a span \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em elem}]Event length \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]\doxyref{Bin}{p.}{classBin} containing event length \end{Desc}
+\index{Histogram@{Histogram}!toCSV@{toCSV}}
+\index{toCSV@{toCSV}!Histogram@{Histogram}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void Histogram::to\-CSV (std::ofstream \& {\em fs})}\label{classHistogram_382d75bdb09a733dff2e72ea4dfd6164}
+
+
+Output to CSV file like: bin\_\-start,bin\_\-end,count \index{Histogram@{Histogram}!totalCount@{totalCount}}
+\index{totalCount@{totalCount}!Histogram@{Histogram}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}size\_\-t Histogram::total\-Count () const\hspace{0.3cm}{\tt  [inline]}}\label{classHistogram_c9d89b8d56b60cfee2260d8d18b88824}
+
+
+Return the total number of elements in the \doxyref{Histogram}{p.}{classHistogram} 
+
+The documentation for this class was generated from the following file:\begin{CompactItemize}
+\item 
+/xchip/gistic/Jeremiah/GIT/isva/Snow\-Tools/src/Snow\-Tools/Histogram.h\end{CompactItemize}
