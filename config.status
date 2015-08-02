@@ -507,6 +507,9 @@ s,@am__leading_dot@,.,;t t
 s,@AMTAR@,${SHELL} /xchip/gistic/Jeremiah/GIT/VariantBam/missing --run tar,;t t
 s,@am__tar@,${AMTAR} chof - "$$tardir",;t t
 s,@am__untar@,${AMTAR} xf -,;t t
+s,@MAINTAINER_MODE_TRUE@,#,;t t
+s,@MAINTAINER_MODE_FALSE@,,;t t
+s,@MAINT@,#,;t t
 s,@CXX@,g++,;t t
 s,@CXXFLAGS@,-O3,;t t
 s,@LDFLAGS@, -L.,;t t
